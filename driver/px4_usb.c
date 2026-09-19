@@ -159,7 +159,7 @@ static int px4_usb_probe(struct usb_interface *intf,
 		case USB_PID_PX_MLT5U:
 			pxmlt5_model = PXMLT5U_MODEL;
 			fallthrough;
-		case USB_PID_DIGIBEST_ISDB6014_5TS;
+		case USB_PID_DIGIBEST_ISDB6014_5TS:
 			fallthrough;
 			/* DTV02A-5TS-P treat as PX-MLT5PE */
 		case USB_PID_PX_MLT5PE:
