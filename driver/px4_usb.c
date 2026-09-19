@@ -159,6 +159,9 @@ static int px4_usb_probe(struct usb_interface *intf,
 		case USB_PID_PX_MLT5U:
 			pxmlt5_model = PXMLT5U_MODEL;
 			fallthrough;
+		case USB_PID_DIGIBEST_ISDB6014_5TS;
+			fallthrough;
+			/* DTV02A-5TS-P treat as PX-MLT5PE */
 		case USB_PID_PX_MLT5PE:
 			ret = px4_usb_init_bridge(dev, usb_dev,
 						  &ctx->ctx.pxmlt.it930x);
@@ -369,6 +372,7 @@ static const struct usb_device_id px4_usb_ids[] = {
 	{ USB_DEVICE(0x0511, USB_PID_PX_M1UR) },
 	{ USB_DEVICE(0x0511, USB_PID_PX_S1UR) },
 	{ USB_DEVICE(0x0511, USB_PID_DIGIBEST_ISDBT2071) },
+	{ USB_DEVICE(0x0511, USB_PID_DIGIBEST_ISDB6014_5TS) }
 	{ 0 }
 };
 
